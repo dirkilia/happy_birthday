@@ -1,0 +1,13 @@
+version: "3"
+
+tasks:
+  run:
+    desc: "Start server"
+    cmds:
+      - go run cmd/api/main.go
+  migrate: 
+    aliases:
+      - mig
+    desc: "Migrate database"
+    cmds:
+      - go run cmd/migrator/main.go --storage-path=./db/company_info.db --migrations-path=./db/migrations
